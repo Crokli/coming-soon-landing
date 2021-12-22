@@ -2,34 +2,64 @@ body {
     background: linear-gradient(135deg, rgba(3,7,4,1) 0%, rgba(6,15,8,1) 100%);
     color: white;
     font-family: 'Work Sans';
-    display: flex;
     width: 100%;
-    height: 100%;
     margin: 0;
     padding: 0;
     border: 0;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
     overflow: hidden; /*sans barre pour scroller*/
 }
 
+@media screen and (max-width: 1000px) {
+    body {
+        /* overflow:auto; */
+    }
+
+    .site-wrapper {
+        flex-direction: column-reverse;
+    }
+    
+    main {
+         
+    }
+    
+    .catcheye h1 {
+        font-size: 40px;
+    }
+
+    .catcheye p {
+        font-size: 18px;
+        width: 100%;
+    }
+     .liens {
+         font-size: 30px;
+    }
+     .liensdis {
+         font-size: 10px;
+    }
+}
+
 main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
     margin: 0;
     padding: 0;
     border: 0;
-    transform: translate3d(0, -10%, 0); /*pour deplacer*/
     z-index: 20; /*profondeur*/
+    width: 100%;
+}
+
+.site-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
 section {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: auto;
     margin: 0;
     padding: 0;
     border: 0; 
@@ -132,3 +162,4 @@ aside {
     top: 0;
     transform: scale3d(0.7, 0.7, 1) translate3d(-320px, -50px, 0);
 }
+
