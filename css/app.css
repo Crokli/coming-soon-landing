@@ -11,6 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    overflow: hidden; /*sans barre pour scroller*/
 }
 
 main {
@@ -22,6 +23,7 @@ main {
     padding: 0;
     border: 0;
     transform: translate3d(0, -10%, 0); /*pour deplacer*/
+    z-index: 20; /*profondeur*/
 }
 
 section {
@@ -40,6 +42,9 @@ h1 {
     text-transform: uppercase;
     font-size: 128px;
     text-shadow: #F8890A 0px 5px;
+    margin: 32px 0;
+    position: relative;
+    left: -7px;
 }
 .liens {
     text-decoration: none;
@@ -97,4 +102,33 @@ p {
  
 aside {
     display: flex;
+}
+
+.basilic {
+    position: absolute;
+    bottom: -100px;
+    right: 0;
+    transform: scale3d(0.8, 0.8, 0.8) translate3d(200px, 90px, 0);
+}
+
+.basilic1 {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    transform: scale3d(0.7, 0.7, 1) translate3d(-300px, -240px, 0);
+}
+
+.basilic2 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: scale3d(0.7, 0.7, 1) translate3d(-100px, -250px, 0) rotate(-90deg);
+    z-index: 10;
+}
+
+.basilic3 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: scale3d(0.7, 0.7, 1) translate3d(-320px, -50px, 0);
 }
