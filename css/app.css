@@ -12,16 +12,16 @@ body {
 
 @media screen and (max-width: 1000px) {
     body {
-        /* overflow:auto; */
+         overflow:auto; 
+    }
+    .basilic {
+        width: 50%;
     }
 
     .site-wrapper {
         flex-direction: column-reverse;
     }
     
-    main {
-         
-    }
     
     .catcheye h1 {
         font-size: 40px;
