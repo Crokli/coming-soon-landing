@@ -12,7 +12,10 @@ body {
 
 @media screen and (max-width: 1000px) {
     body {
-        /* overflow:auto; */
+         overflow:auto; 
+    }
+    .basilic {
+        width: 50%;
     }
 
     .site-wrapper {
