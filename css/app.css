@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background: linear-gradient(135deg, rgba(3,7,4,1) 0%, rgba(6,15,8,1) 100%);
     color: white;
@@ -8,35 +12,7 @@ body {
     border: 0;
     min-height: 100vh;
     overflow: hidden; /*sans barre pour scroller*/
-}
-
-@media screen and (max-width: 1000px) {
-    body {
-         overflow:auto; 
-    }
-    .basilic {
-        width: 50%;
-    }
-
-    .site-wrapper {
-        flex-direction: column-reverse;
-    }
-    
-    
-    .catcheye h1 {
-        font-size: 40px;
-    }
-
-    .catcheye p {
-        font-size: 18px;
-        width: 100%;
-    }
-     .liens {
-         font-size: 30px;
-    }
-     .liensdis {
-         font-size: 10px;
-    }
+    font-size: 16px;
 }
 
 main {
@@ -54,6 +30,7 @@ main {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    padding: 48px;
 }
 
 section {
@@ -66,7 +43,8 @@ section {
 } 
 
 #logo {
-    width: 300px;
+    max-width: 300px;
+    width: 100%;
 }
 h1 {
     text-transform: uppercase;
@@ -76,12 +54,18 @@ h1 {
     position: relative;
     left: -7px;
 }
+
+aside.social-links {
+    display: flex;
+    align-items: flex-start;
+}
+
 .liens {
+    position: relative;
     text-decoration: none;
-    font-family: 'Work Sans';
     font-size: 21px;
-    display: inline-block;   
-    padding: 5px 20px;
+    display: inline;
+    padding: 0.5em 1em;
     outline: 0;
     border-radius: 15px;
     background-color: #21e273;
@@ -89,27 +73,39 @@ h1 {
     font-style: normal;
     font-weight: 800;
     font-size: 15px;
-    line-height: 20px;
-    margin: 0 10px 10px 0;
+    margin-right: 10px;
     white-space: nowrap;
+    transition: backgroundColor 0.5s ease-in-out;
+    overflow: hidden;
 }
-.liensdis {
-    text-decoration: none;
-    font-family: 'Work Sans';
-    font-size: 21px;
-    display: inline-block;   
-    padding: 5px 20px;
-    outline: 0;
-    border-radius: 15px;
-    background-color: #F8890A;
-    color: #202131;
-    font-style: normal;
-    font-weight: 800;
-    font-size: 15px;
-    line-height: 20px;
-    margin: 0 10px 10px 0;
-    white-space: nowrap;
 
+.liens:hover {
+    background-color: #35f384;
+}
+
+.liensdis {
+    background-color: #F8890A;
+}
+
+.liensdis:hover {
+    background-color: #fb951f;
+}
+
+.liens span {
+    display: block;
+    transition: transform .3s cubic-bezier(0,.99,.57,1.46);
+}
+
+.liens span::after {
+    content: attr(data-q);
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate3d(-50%, 100%, 0);
+    color: white;
+}
+
+.liens:hover span {
+    transform: translate3d(0, -150%, 0);
 }
 
 .catcheye {
@@ -161,5 +157,58 @@ aside {
     left: 0;
     top: 0;
     transform: scale3d(0.7, 0.7, 1) translate3d(-320px, -50px, 0);
+}
+
+@media screen and (max-width: 991px) {
+    body {
+         overflow-y:auto; 
+    }
+
+    #logo {
+        margin-bottom: 16px;
+        max-width: 250px;
+    }
+
+    .basilic {
+        display: none;
+    }
+
+    .top-basilic {
+        position: fixed;
+        top: 0; left: 0;
+        transform: scale3d(0.65, 0.65, 1);
+    }
+
+    .site-wrapper {
+        flex-direction: column-reverse;
+        padding: 16px;
+    }
+
+    section {
+        text-align: center;
+        width: 100%;
+    }
+
+    section aside {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    .liens {
+        margin-bottom: 10px;
+    }
+    
+    .catcheye h1 {
+        width: 100%;
+        font-size: 2.8rem;
+        word-break: break-all;
+    }
+
+    .catcheye p {
+        font-size: 1.2rem;
+        width: 100%;
+        margin-top: 0;
+    }
 }
 
